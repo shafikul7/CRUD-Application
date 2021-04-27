@@ -1,6 +1,9 @@
-import '../styles/index.scss'
+const URL = 'https://jsonplaceholder.typicode.com/users'
 
-import { sum, sub  } from './math'
+const xhr = new XMLHttpRequest();
 
-console.log('Hello Webpack 4')
-
+xhr.onreadystatechange =() => {
+    console.log(xhr.response)
+}
+xhr.open('GET', URL)
+xhr.send();

@@ -1,3 +1,4 @@
+import axios from 'axios';
 const URL = 'https://jsonplaceholder.typicode.com/users'
 
 // @ XMLHttpRequest
@@ -15,12 +16,39 @@ const URL = 'https://jsonplaceholder.typicode.com/users'
 //     xhr.send()
 // });
 
-//fetch api
+// @ fetch Api
+// let btn = document.querySelector('#loadData')
+// let p = document.querySelector('#output')
+
+// btn.addEventListener('click', function () {
+//     fetch(URL)
+//         // .then(res => console.log(res.json()))
+//         .then(res => res.json())
+//         .then(data => {
+//             data.forEach(user => {
+//                 p.innerHTML = `${p.innerHTML} </br> name: ${user.name}`;
+//             })
+//         })
+//         .catch(err => console.log(err))
+// });
+
+// fetch(URL,{
+//     method: 'POST',
+//     body : JSON.stringify(),
+// })
+
+// axios
+
 let btn = document.querySelector('#loadData')
 let p = document.querySelector('#output')
+btn.addEventListener('click', function () {
 
-fetch(URL)
-    // .then(res => console.log(res.json()))
-    .then(res => res.json())
-    .then(data => console.log(data))
-    .catch(err => console.log(err))
+    axios
+        .get(URL)
+        .then(res => {
+            res.data.forEach(user => {
+                p.innerHTML = `${p.innerHTML} </br> name: ${user.name}`;
+            })
+        })
+        .catch(err => console.log(err))
+});

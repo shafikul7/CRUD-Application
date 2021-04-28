@@ -1,6 +1,16 @@
-import axios from 'axios';
+import axios from "axios";
 const URL = 'http://localhost:3000/CRUD%20Application';
 
+window.onload = function() {
+    let tbody = document.querySelector('#tbody');
+    axios.get(URL)
+    .than(res => {
+        res.data.forEach(contact => {
+            createTDElement(contact,tbody)
+        })
+    })
+    .catch()
+}
 
 // const URL = 'https://jsonplaceholder.typicode.com/users'
 // @ XMLHttpRequest
@@ -55,12 +65,41 @@ const URL = 'http://localhost:3000/CRUD%20Application';
 //         .catch(err => console.log(err))
 // });
 
-function createTDElement(contract,parentElement){
-    const TR =document.createElement('tr');
+function createTDElement(contact, parentElement) {
+    const TR = document.createElement('tr');
 
-    const tdName =document.createElement('td');
-    const tdPhone =document.createElement('td');
-    const tdEmail =document.createElement('td');
-    const tdAction =document.createElement('td');
+    const tdName = document.createElement('td');
+    tdName.innerHTML = contact.name
+    TR.appendChild(tdName);
+    const tdPhone = document.createElement('td');
+    tdPhone.innerHTML = contact.phone ? contact.phone : 'N/A'
+    TR.appendChild(tdPhone);
+    const tdEmail = document.createElement('td');
+    tdEmail.innerHTML = contact.email ? contact.email : 'N/A'
+    TR.appendChild(tdEmail);
+    const tdAction = document.createElement('td');
+
+    const tdEditBtn = document.createElement('button');
+    tdEditBtn.className = 'btn btn-warning'
+    tdEditBtn.innerHTML = 'Edit'
+    tdEditBtn.addEventListener('click', function () {
+        console.log('i am edit button')
+    })
+    tdAction.appendChild(tdEditBtn);
+
+
+    const tdDeleteBtn = document.createElement('button');
+    tdDeleteBtn.className = 'btn btn-danger'
+    tdDeleteBtn.innerHTML = 'Delete'
+    tdDeleteBtn.addEventListener('click', function () {
+        console.log('i am Delete button')
+    })
+    tdAction.appendChild(tdDeleteBtn);
+
+
+    TR.appendChild(tdAction)
+
+    parentElement.appendChild(TR);
+
 
 }

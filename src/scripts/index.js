@@ -1,6 +1,8 @@
 import axios from 'axios';
-const URL = 'https://jsonplaceholder.typicode.com/users'
+const URL = 'http://localhost:3000/CRUD%20Application';
 
+
+// const URL = 'https://jsonplaceholder.typicode.com/users'
 // @ XMLHttpRequest
 
 // let btn = document.querySelector('#loadData')
@@ -39,16 +41,26 @@ const URL = 'https://jsonplaceholder.typicode.com/users'
 
 // axios 
 
-let btn = document.querySelector('#loadData')
-let p = document.querySelector('#output')
-btn.addEventListener('click', function () {
+// let btn = document.querySelector('#loadData')
+// let p = document.querySelector('#output')
+// btn.addEventListener('click', function () {
 
-    axios
-        .get(URL)
-        .then(res => {
-            res.data.forEach(user => {
-                p.innerHTML = `${p.innerHTML} </br> name: ${user.name}`;
-            })
-        })
-        .catch(err => console.log(err))
-});
+//     axios
+//         .get(URL)
+//         .then(res => {
+//             res.data.forEach(user => {
+//                 p.innerHTML = `${p.innerHTML} </br> name: ${user.name}`;
+//             })
+//         })
+//         .catch(err => console.log(err))
+// });
+
+function createTDElement(contract,parentElement){
+    const TR =document.createElement('tr');
+
+    const tdName =document.createElement('td');
+    const tdPhone =document.createElement('td');
+    const tdEmail =document.createElement('td');
+    const tdAction =document.createElement('td');
+
+}

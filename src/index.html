@@ -12,9 +12,47 @@
 </head>
 
 <body>
-    <div class="container">
-        <button id="loadData" class="btn btn-primary">Clicked</button>
-        <p id="output">Output</p>
+    <div class="container py-5">
+        <!-- <button id="loadData" class="btn btn-primary">Clicked</button>
+        <p id="output">Output</p> -->
+        <h1 class="text-center">CRUD-Application Ajax project</h1>
+        <div class="row my-4">
+            <div class="col">
+                <input type="text" class="form-control" name="" id="nameField" placeholder="Enter Name">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" name="" id="phoneField" placeholder="Phone Name">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" name="" id="emailField" placeholder="Email Name">
+            </div>
+            <div class="col text-center">
+                <button class="btn btn-primary">Sava Contact</button>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>
+                        <button class="btn btn-warning">Edit</button>
+                        <button class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <!-- js start -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"

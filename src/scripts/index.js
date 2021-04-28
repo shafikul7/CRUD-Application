@@ -37,7 +37,7 @@ const URL = 'https://jsonplaceholder.typicode.com/users'
 //     body : JSON.stringify(),
 // })
 
-// axios
+// axios 
 
 let btn = document.querySelector('#loadData')
 let p = document.querySelector('#output')

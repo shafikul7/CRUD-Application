@@ -1,15 +1,15 @@
 import axios from "axios";
-const URL = 'http://localhost:3000/CRUD%20Application';
+const URL = 'http://localhost:3000/contact';
 
-window.onload = function() {
+window.onload = function () {
     let tbody = document.querySelector('#tbody');
     axios.get(URL)
-    .than(res => {
-        res.data.forEach(contact => {
-            createTDElement(contact,tbody)
+        .than(res => {
+            res.data.forEach(contact => {
+                createTDElement(contact, tbody);
+            })
         })
-    })
-    .catch()
+        .catch()
 }
 
 // const URL = 'https://jsonplaceholder.typicode.com/users'

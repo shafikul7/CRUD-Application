@@ -44,10 +44,7 @@ window.onload = function () {
 //         .catch(err => console.log(err))
 // });
 
-// fetch(URL,{
-//     method: 'POST',
-//     body : JSON.stringify(),
-// })
+
 
 // axios 
 

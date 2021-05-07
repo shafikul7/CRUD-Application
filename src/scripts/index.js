@@ -18,16 +18,6 @@ window.onload = function () {
 // let btn = document.querySelector('#loadData')
 // let p = document.querySelector('#output')
 
-// btn.addEventListener('click', function () {
-//     const xhr = new XMLHttpRequest();
-
-//     xhr.onreadystatechange = () => {
-//         p.innerHTML = xhr.response
-//     }
-//     xhr.open('GET', URL)
-//     xhr.send()
-// });
-
 // @ fetch Api
 // let btn = document.querySelector('#loadData')
 // let p = document.querySelector('#output')
